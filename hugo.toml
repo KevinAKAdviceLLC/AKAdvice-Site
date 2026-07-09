@@ -1,4 +1,4 @@
-baseURL = 'https://akadvice.netlify.app/'
+baseURL = 'https://akadvicellc.netlify.app/'
 locale = 'en-us'
 title = 'AKAdvice'
 theme = 'PaperMod'
