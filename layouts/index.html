@@ -12,16 +12,19 @@
 {{- $sectionName := . }}
 {{- $sectionPage := site.GetPage $sectionName }}
 {{- $posts := where site.RegularPages "Type" $sectionName }}
+{{- $categoryClass := "" }}
+{{- if eq $sectionName "dont-buy-this" }}{{- $categoryClass = "category-buy" }}
+{{- else if eq $sectionName "dont-eat-this" }}{{- $categoryClass = "category-eat" }}
+{{- else if eq $sectionName "dont-do-this" }}{{- $categoryClass = "category-do" }}
+{{- end }}
 {{- with $posts }}
 {{- $latest := index . 0 }}
-<article class="post-entry">
+<article class="post-entry {{ $categoryClass }}">
   {{- $isHidden := ($latest.Param "cover.hiddenInList") | default ($latest.Param "cover.hidden") | default false }}
   {{- partial "cover.html" (dict "cxt" $latest "IsSingle" false "isHidden" $isHidden) }}
   <header class="entry-header">
     {{- with $sectionPage }}
-    <p style="margin: 0 0 4px; font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6;">
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </p>
+    <p class="category-label"><a href="{{ .Permalink }}">{{ .Title }}</a></p>
     {{- end }}
     <h2 class="entry-hint-parent">{{ $latest.Title }}</h2>
   </header>

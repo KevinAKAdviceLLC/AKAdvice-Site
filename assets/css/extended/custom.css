@@ -1,0 +1,112 @@
+:root {
+    --accent: #c1694f;
+    --accent-buy: #c1694f;
+    --accent-eat: #b8862b;
+    --accent-do: #5c7a52;
+    --bg-warm: #fbf8f3;
+}
+
+:root[data-theme="dark"] {
+    --accent: #e0937a;
+    --accent-buy: #e0937a;
+    --accent-eat: #e0b95f;
+    --accent-do: #8fb37e;
+    --bg-warm: #24211d;
+}
+
+body,
+.list,
+[data-theme="dark"] .list {
+    background: var(--bg-warm);
+}
+
+h1, h2, h3,
+.entry-header h2,
+.page-header h1,
+.home-info h1 {
+    font-family: 'Fraunces', ui-serif, Georgia, serif;
+    font-weight: 600;
+}
+
+.logo a {
+    color: var(--accent);
+    font-family: 'Fraunces', ui-serif, Georgia, serif;
+    font-weight: 700;
+}
+
+.menu .active {
+    text-decoration-color: var(--accent);
+}
+
+.menu a[href*="dont-buy-this"]:hover,
+.menu a[href*="dont-buy-this"].active {
+    color: var(--accent-buy);
+}
+
+.menu a[href*="dont-eat-this"]:hover,
+.menu a[href*="dont-eat-this"].active {
+    color: var(--accent-eat);
+}
+
+.menu a[href*="dont-do-this"]:hover,
+.menu a[href*="dont-do-this"].active {
+    color: var(--accent-do);
+}
+
+.post-entry:hover,
+.post-entry:focus-within {
+    border-color: var(--accent);
+}
+
+.pagination a {
+    background: var(--accent);
+}
+
+.md-content blockquote {
+    border-inline-start-color: var(--accent);
+}
+
+.md-content a:not(.anchor),
+.entry-cover a {
+    text-decoration-color: var(--accent);
+}
+
+.category-label {
+    display: inline-block;
+    margin: 0 0 4px;
+    font-size: 0.78em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.category-label a {
+    text-decoration: none;
+}
+
+.category-buy .category-label,
+.category-buy .category-label a {
+    color: var(--accent-buy);
+}
+
+.category-eat .category-label,
+.category-eat .category-label a {
+    color: var(--accent-eat);
+}
+
+.category-do .category-label,
+.category-do .category-label a {
+    color: var(--accent-do);
+}
+
+.category-buy {
+    border-inline-start: 4px solid var(--accent-buy);
+}
+
+.category-eat {
+    border-inline-start: 4px solid var(--accent-eat);
+}
+
+.category-do {
+    border-inline-start: 4px solid var(--accent-do);
+}
