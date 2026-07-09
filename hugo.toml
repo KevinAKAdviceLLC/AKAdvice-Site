@@ -1,0 +1,88 @@
+baseURL = 'https://akadvice.netlify.app/'
+locale = 'en-us'
+title = 'AKAdvice'
+theme = 'PaperMod'
+
+paginate = 10
+enableRobotsTXT = true
+enableEmoji = true
+pygmentsUseClasses = true
+
+[minify]
+  disableXML = true
+
+[taxonomies]
+  tag = 'tags'
+
+[params]
+  env = 'production'
+  title = 'AKAdvice'
+  description = 'Discover the Unexpected — a NorCal family on reviews, restaurants, and road trips, keeping it real (and fiscally responsible) since always.'
+  keywords = ['blog', 'family', 'reviews', 'travel', 'Northern California']
+  author = 'AKAdvice'
+  DateFormat = 'January 2, 2006'
+  defaultTheme = 'auto'
+  disableThemeToggle = false
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = false
+  ShowWordCount = false
+  ShowRssButtonInSectionTermList = true
+  mainSections = ["dont-buy-this", "dont-eat-this", "dont-do-this"]
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  comments = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = false
+  tocopen = false
+
+  [params.homeInfoParams]
+    Title = "AKAdvice — Discover the Unexpected"
+    Content = """
+We're a young family in Northern California doing our best to raise good humans, keep our faith at the center of the house, and not go broke doing it. This is where we write it down: the products that weren't worth it, the restaurants that were (or very much weren't), and the trips we took so you can decide whether to bother.
+
+No sponsorships. No influencer nonsense. Just receipts — literal and otherwise.
+
+- **Real People.** We're not consultants. We buy the thing, eat the meal, take the trip, and tell you the truth about it.
+- **Money Doesn't Grow on Trees.** We have a budget and a mortgage and small humans who need shoes. Everything here is filtered through "was it worth it."
+- **It's Supposed to Be Fun.** Fiscally responsible doesn't mean miserable. We still go places, eat things, and buy stuff — we just talk about it honestly afterward.
+"""
+
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/kevinakadviceLLC'
+
+[[menu.main]]
+  identifier = 'dont-buy-this'
+  name = "Don't Buy This"
+  url = '/dont-buy-this/'
+  weight = 10
+
+[[menu.main]]
+  identifier = 'dont-eat-this'
+  name = "Don't Eat This"
+  url = '/dont-eat-this/'
+  weight = 20
+
+[[menu.main]]
+  identifier = 'dont-do-this'
+  name = "Don't Do This"
+  url = '/dont-do-this/'
+  weight = 30
+
+[[menu.main]]
+  identifier = 'about'
+  name = 'About'
+  url = '/about/'
+  weight = 40
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
