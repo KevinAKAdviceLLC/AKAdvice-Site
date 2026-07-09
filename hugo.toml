@@ -29,7 +29,7 @@ pygmentsUseClasses = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = false
   ShowWordCount = false
-  ShowRssButtonInSectionTermList = true
+  ShowRssButtonInSectionTermList = false
   mainSections = ["dont-buy-this", "dont-eat-this", "dont-do-this"]
   UseHugoToc = true
   disableSpecial1stPost = false
@@ -51,10 +51,6 @@ No sponsorships. No influencer nonsense. Just receipts — literal and otherwise
 - **Money Doesn't Grow on Trees.** We have a budget and a mortgage and small humans who need shoes. Everything here is filtered through "was it worth it."
 - **It's Supposed to Be Fun.** Fiscally responsible doesn't mean miserable. We still go places, eat things, and buy stuff — we just talk about it honestly afterward.
 """
-
-  [[params.socialIcons]]
-    name = 'github'
-    url = 'https://github.com/kevinakadviceLLC'
 
 [[menu.main]]
   identifier = 'dont-buy-this'

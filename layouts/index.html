@@ -1,0 +1,41 @@
+{{- define "main" }}
+
+{{- if site.Params.homeInfoParams }}
+{{- partial "home_info.html" . }}
+{{- end }}
+
+<header class="page-header">
+  <h1>Latest From Each Category</h1>
+</header>
+
+{{- range site.Params.mainSections }}
+{{- $sectionName := . }}
+{{- $sectionPage := site.GetPage $sectionName }}
+{{- $posts := where site.RegularPages "Type" $sectionName }}
+{{- with $posts }}
+{{- $latest := index . 0 }}
+<article class="post-entry">
+  {{- $isHidden := ($latest.Param "cover.hiddenInList") | default ($latest.Param "cover.hidden") | default false }}
+  {{- partial "cover.html" (dict "cxt" $latest "IsSingle" false "isHidden" $isHidden) }}
+  <header class="entry-header">
+    {{- with $sectionPage }}
+    <p style="margin: 0 0 4px; font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6;">
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </p>
+    {{- end }}
+    <h2 class="entry-hint-parent">{{ $latest.Title }}</h2>
+  </header>
+  {{- if (ne ($latest.Param "hideSummary") true) }}
+  <div class="entry-content">
+    <p>{{ $latest.Summary | plainify | htmlUnescape }}{{ if $latest.Truncated }}...{{ end }}</p>
+  </div>
+  {{- end }}
+  <footer class="entry-footer">
+    {{- partial "post_meta.html" $latest -}}
+  </footer>
+  <a class="entry-link" aria-label="post link to {{ $latest.Title | plainify }}" href="{{ $latest.Permalink }}"></a>
+</article>
+{{- end }}
+{{- end }}
+
+{{- end }}
