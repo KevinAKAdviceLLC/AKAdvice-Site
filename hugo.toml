@@ -53,6 +53,12 @@ No sponsorships. No influencer nonsense. Just receipts — literal and otherwise
 """
 
 [[menu.main]]
+  identifier = 'home'
+  name = 'Home'
+  url = '/'
+  weight = 5
+
+[[menu.main]]
   identifier = 'dont-buy-this'
   name = "Don't Buy This"
   url = '/dont-buy-this/'
