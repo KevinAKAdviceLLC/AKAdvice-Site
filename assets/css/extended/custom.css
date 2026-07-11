@@ -6,17 +6,8 @@
     --bg-warm: #fbf8f3;
 }
 
-:root[data-theme="dark"] {
-    --accent: #e0937a;
-    --accent-buy: #e0937a;
-    --accent-eat: #e0b95f;
-    --accent-do: #8fb37e;
-    --bg-warm: #24211d;
-}
-
 body,
-.list,
-[data-theme="dark"] .list {
+.list {
     background: var(--bg-warm);
 }
 
